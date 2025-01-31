@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Places - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">শপিং স্পট</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Places Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Millennium Shopping Mall -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="5.jpeg" 
+                     alt="মিলেনিয়াম শপিং মল" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">পরিমল টাওয়ার</h3>
+                    <p class="text-gray-600 mb-4">এন এস রোড, কুষ্টিয়া</p>
+                    <div class="space-y-2">
+                        <p class="text-gray-700">
+                            <span class="font-medium">দোকান সংখ্যা:</span> ৫০+
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">সময়:</span> সকাল ১০টা - রাত ১০টা
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">পণ্য:</span> কাপড়, ইলেকট্রনিক্স, কসমেটিক্স
+                        </p>
+                    </div>
+                    <a href="#" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center mt-4">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kushtia Plaza -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="6.jpeg" 
+                     alt="কুষ্টিয়া প্লাজা" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">কুষ্টিয়া প্লাজা</h3>
+                    <p class="text-gray-600 mb-4">মজমপুর রোড, কুষ্টিয়া</p>
+                    <div class="space-y-2">
+                        <p class="text-gray-700">
+                            <span class="font-medium">দোকান সংখ্যা:</span> ৪০+
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">সময়:</span> সকাল ১০টা - রাত ৯টা
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">পণ্য:</span> কাপড়, জুতা, খেলনা
+                        </p>
+                    </div>
+                    <a href="#" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center mt-4">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- New Market -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="7.jpeg" 
+                     alt="নিউ মার্কেট" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">নিউ মার্কেট</h3>
+                    <p class="text-gray-600 mb-4">এন এস রোড, কুষ্টিয়া</p>
+                    <div class="space-y-2">
+                        <p class="text-gray-700">
+                            <span class="font-medium">দোকান সংখ্যা:</span> ১০০+
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">সময়:</span> সকাল ৯টা - রাত ১০টা
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">পণ্য:</span> সব ধরনের পণ্য
+                        </p>
+                    </div>
+                    <a href="#" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center mt-4">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">শপিং টিপস</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-2">সেরা সময়</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>সকাল ১০টা থেকে দুপুর ২টা - কম ভিড়</li>
+                        <li>বিকাল ৪টা থেকে সন্ধ্যা ৭টা - বেশি ভিড়</li>
+                        <li>শুক্রবার - সাপ্তাহিক ছুটি</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-2">বিশেষ দ্রষ্টব্য</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>দর কষাকষি করা যায়</li>
+                        <li>ক্যাশ/বিকাশ পেমেন্ট গ্রহণযোগ্য</li>
+                        <li>পার্কিং সুবিধা আছে</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+    
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+        // Update copyright year dynamically
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+
+
+</body>
+</html> 

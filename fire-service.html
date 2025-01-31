@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Service - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="js/components.js"></script>
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">ফায়ার সার্ভিস</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Emergency Contact Section -->
+        <div class="bg-red-600 text-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-bold mb-4">জরুরি যোগাযোগ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="tel:999" class="flex items-center space-x-3 bg-red-700 p-4 rounded-lg hover:bg-red-800 transition-colors">
+                    <span class="text-3xl">📞</span>
+                    <div>
+                        <p class="font-bold">জরুরি হটলাইন</p>
+                        <p class="text-xl">999</p>
+                    </div>
+                </a>
+                <a href="tel:16163" class="flex items-center space-x-3 bg-red-700 p-4 rounded-lg hover:bg-red-800 transition-colors">
+                    <span class="text-3xl">🚒</span>
+                    <div>
+                        <p class="font-bold">ফায়ার সার্ভিস</p>
+                        <p class="text-xl">16163</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Fire Stations Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">কুষ্টিয়া জেলার ফায়ার স্টেশনসমূহ</h2>
+            <div class="space-y-6">
+                <!-- Kushtia Fire Station -->
+                <div class="border-b pb-4">
+                    <h3 class="font-semibold text-lg">কুষ্টিয়া ফায়ার স্টেশন</h3>
+                    <div class="mt-2 space-y-1">
+                        <p>📞 ফোন: <a href="tel:07171-62220" class="text-blue-600 hover:underline">07171-62220</a></p>
+                        <p>📍 ঠিকানা: এন এস রোড, কুষ্টিয়া সদর, কুষ্টিয়া</p>
+                    </div>
+                </div>
+
+                <!-- Kumarkhali Fire Station -->
+                <div class="border-b pb-4">
+                    <h3 class="font-semibold text-lg">কুমারখালী ফায়ার স্টেশন</h3>
+                    <div class="mt-2 space-y-1">
+                        <p>📞 ফোন: <a href="tel:07025-76222" class="text-blue-600 hover:underline">07025-76222</a></p>
+                        <p>📍 ঠিকানা: কুমারখালী, কুষ্টিয়া</p>
+                    </div>
+                </div>
+
+                <!-- Mirpur Fire Station -->
+                <div class="border-b pb-4">
+                    <h3 class="font-semibold text-lg">মিরপুর ফায়ার স্টেশন</h3>
+                    <div class="mt-2 space-y-1">
+                        <p>📞 ফোন: <a href="tel:07022-56222" class="text-blue-600 hover:underline">07022-56222</a></p>
+                        <p>📍 ঠিকানা: মিরপুর, কুষ্টিয়া</p>
+                    </div>
+                </div>
+
+                <!-- Bheramara Fire Station -->
+                <div>
+                    <h3 class="font-semibold text-lg">ভেড়ামারা ফায়ার স্টেশন</h3>
+                    <div class="mt-2 space-y-1">
+                        <p>📞 ফোন: <a href="tel:07026-63222" class="text-blue-600 hover:underline">07026-63222</a></p>
+                        <p>📍 ঠিকানা: ভেড়ামারা, কুষ্টিয়া</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety Tips Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">অগ্নি নিরাপত্তা টিপস</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <h3 class="font-semibold">প্রতিরোধমূলক ব্যবস্থা</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>স্মোক ডিটেক্টর ইনস্টল করুন</li>
+                        <li>অগ্নি নির্বাপক যন্ত্র রাখুন</li>
+                        <li>বৈদ্যুতিক তার নিয়মিত পরীক্ষা করুন</li>
+                        <li>জরুরি বহির্গমন পথ চিহ্নিত করুন</li>
+                    </ul>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold">আগুন লাগলে করণীয়</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>অবিলম্বে 999 বা 16163 নম্বরে কল করুন</li>
+                        <li>ভবন থেকে দ্রুত বের হয়ে আসুন</li>
+                        <li>লিফট ব্যবহার করবেন না</li>
+                        <li>নিচু হয়ে হামাগুড়ি দিয়ে চলুন</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        // Logout Handler
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+
+        // Add the marquee banner
+        addMarqueeBanner();
+        
+         // Update copyright year dynamically
+         const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+
+       
+</body>
+</html> 

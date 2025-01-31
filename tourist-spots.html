@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Spots - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">দর্শনীয় স্থান</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tourist Spots Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Lalon Shah's Shrine -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="1.jpeg" 
+                     alt="লালন শাহ্‌'র মাজার" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">লালন শাহ্‌'র মাজার</h3>
+                    <p class="text-gray-600 mb-4">চেউরিয়া, কুমারখালী, কুষ্টিয়া</p>
+                    <p class="text-gray-700 mb-4">
+                        বাউল সম্রাট লালন শাহের সমাধি। এটি বাংলাদেশের অন্যতম গুরুত্বপূর্ণ সাংস্কৃতিক কেন্দ্র।
+                    </p>
+                    <a href="https://www.google.com/maps/place/Lalon+Shah's+Shrine/@23.8957877,89.1495235,17z/data=!3m1!4b1!4m6!3m5!1s0x39fe96dd91dc3ae5:0x6a3031f10bb89c16!8m2!3d23.8957877!4d89.1520984!16s%2Fg%2F1w0h5y8f?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Shilaidaha Kuthibari -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="2.jpeg" 
+                     alt="শিলাইদহ কুঠিবাড়ি" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">শিলাইদহ কুঠিবাড়ি</h3>
+                    <p class="text-gray-600 mb-4">শিলাইদহ, কুমারখালী, কুষ্টিয়া</p>
+                    <p class="text-gray-700 mb-4">
+                        রবীন্দ্রনাথ ঠাকুরের স্মৃতিবিজড়িত বাসস্থান। এখানে তিনি অনেক বিখ্যাত রচনা লিখেছেন।
+                    </p>
+                    <a href="https://www.google.com/maps/dir//Shilaidaha+Rabindra+Kuthibari,+Kuthibari+Road,+Kushtia/@23.9199424,89.2174876,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39fe9044f06df655:0xbc543e0ea99e1a8d!2m2!1d89.2200508!2d23.9199334?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hardinge Bridge -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="3.jpeg" 
+                     alt="হার্ডিঞ্জ ব্রিজ" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">হার্ডিঞ্জ ব্রিজ</h3>
+                    <p class="text-gray-600 mb-4">পাকশী, কুষ্টিয়া</p>
+                    <p class="text-gray-700 mb-4">
+                        পদ্মা নদীর উপর নির্মিত ঐতিহাসিক রেলওয়ে ব্রিজ। ১৯১২ সালে নির্মিত।
+                    </p>
+                    <a href="https://www.google.com/maps/dir//Hardinge+Bridge,+6622+Lalon+Shah+Bridge,+%E0%A6%AA%E0%A6%BE%E0%A6%95%E0%A6%B6%E0%A7%80/@24.0680007,89.0274314,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39fea1e6a68cbdf3:0x4c33283b15d3f44e!2m2!1d89.0300063!2d24.0679958?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Islamic University -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="4.jpeg" 
+                     alt="ইসলামী বিশ্ববিদ্যালয়" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">ইসলামী বিশ্ববিদ্যালয়</h3>
+                    <p class="text-gray-600 mb-4">শান্তিধাম, কুষ্টিয়া</p>
+                    <p class="text-gray-700 mb-4">
+                        বাংলাদেশের অন্যতম প্রাচীন পাবলিক বিশ্ববিদ্যালয়। সুন্দর ক্যাম্পাস ও স্থাপত্য।
+                    </p>
+                    <a href="https://www.google.com/maps/dir//P5C2%2BXRF+Islamic+University/@23.7224472,89.1494732,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39feeb0d36323c41:0x4c170899846e8597!2m2!1d89.1520481!2d23.7224423?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center">
+                        <span>ম্যাপে দেখুন</span>
+                        <span class="ml-1">🗺️</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">ভ্রমণ তথ্য</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-2">যাতায়াত</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>কুষ্টিয়া রেলওয়ে স্টেশন থেকে অটো/সিএনজি পাওয়া যায়</li>
+                        <li>বাস স্ট্যান্ড থেকে লোকাল বাস সার্ভিস আছে</li>
+                        <li>ভাড়া করা গাড়ি পাওয়া যায়</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-2">থাকার ব্যবস্থা</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>জেলা শহরে বিভিন্ন হোটেল আছে</li>
+                        <li>শিলাইদহে রেস্ট হাউস আছে</li>
+                        <li>লালন শাহ্‌'র মাজারে অতিথিশালা আছে</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+</body>
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+        // Update copyright year dynamically
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+    
+</html> 

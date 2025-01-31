@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Schedule - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">ট্রেনের সময়সূচি</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Train Schedule -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">কুষ্টিয়া স্টেশন থেকে ট্রেনের সময়সূচি</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ট্রেনের নাম</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">গন্তব্য</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ছাড়ার সময়</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">টিকেটের ধরণ</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">সুন্দরবন এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - ঢাকা</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">০১:১২ রাত</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">মধুমতি এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - ঢাকা</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">০৯:২২ সকাল</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">বেনাপোল এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - ঢাকা</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">০৪:৫৬ বিকাল</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">টুঙ্গীপাড়া এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - ঢাকা</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">০৫:৫৭ বিকাল</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">মধুমতি এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - রাজশাহী</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">০৭:৩৭ সন্ধ্যা</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">টুঙ্গীপাড়া এক্সপ্রেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500">কুষ্টিয়া - রাজশাহী</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">১০:২৬ সকাল</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">এসি/নন-এসি চেয়ার</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Additional Information -->
+                <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-2">গুরুত্বপূর্ণ তথ্য</h3>
+                    <ul class="list-disc list-inside text-sm text-blue-700 space-y-2">
+                        <li>টিকেট কাউন্টার খোলা থাকে সকাল ৮টা থেকে রাত ৮টা পর্যন্ত</li>
+                        <li>অনলাইন টিকেট বুকিং: <a href="https://eticket.railway.gov.bd/" class="underline">railway.gov.bd</a></li>
+                        <li>স্টেশন হেল্পলাইন: 999</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-green-500 text-black font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+         // Update copyright year dynamically
+         const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+</body>
+</html> 

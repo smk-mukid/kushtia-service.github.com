@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিদ্যুৎ অফিস - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="js/components.js"></script>
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">বিদ্যুৎ অফিস</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Emergency Contact Section -->
+        <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-bold mb-4">জরুরি যোগাযোগ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="tel:16120" class="flex items-center space-x-3 bg-yellow-600 p-4 rounded-lg hover:bg-yellow-700 transition-colors">
+                    <span class="text-3xl">⚡</span>
+                    <div>
+                        <p class="font-bold">বিদ্যুৎ জরুরি সেবা</p>
+                        <p class="text-xl">16120</p>
+                    </div>
+                </a>
+                <a href="tel:01769404050" class="flex items-center space-x-3 bg-yellow-600 p-4 rounded-lg hover:bg-yellow-700 transition-colors">
+                    <span class="text-3xl">📞</span>
+                    <div>
+                        <p class="font-bold">কুষ্টিয়া বিদ্যুৎ কন্ট্রোল রুম</p>
+                        <p class="text-xl">01769-404050</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Office Information Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">বিদ্যুৎ অফিস সমূহ</h2>
+
+            <!-- West Zone Power Distribution Company -->
+            <div class="border-b pb-6 mb-6">
+                <h3 class="text-lg font-semibold mb-4">ওয়েস্ট জোন পাওয়ার ডিস্ট্রিবিউশন কোম্পানি লিমিটেড (ওজোপাডিকো)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p>📞 ফোন: <a href="tel:07171-62322" class="text-blue-600 hover:underline">07171-62322</a></p>
+                        <p>📍 ঠিকানা: বিদ্যুৎ ভবন, কুষ্টিয়া সদর</p>
+                        <p>⏰ অফিস সময়: সকাল ৯টা - বিকাল ৫টা</p>
+                    </div>
+                    <div>
+                        <a href="https://wzpdcl.gov.bd/" target="_blank" 
+                           class="text-blue-600 hover:underline flex items-center">
+                            <span class="mr-2">🌐</span> ওয়েবসাইট
+                        </a>
+                        <p>✉️ ইমেইল: se.kushtia@wzpdcl.gov.bd</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kushtia PBS -->
+            <div class="border-b pb-6 mb-6">
+                <h3 class="text-lg font-semibold mb-4">পল্লী বিদ্যুৎ সমিতি (পবিস), কুষ্টিয়া</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p>📞 ফোন: <a href="tel:07171-62424" class="text-blue-600 hover:underline">07171-62424</a></p>
+                        <p>📍 ঠিকানা: মজমপুর, কুষ্টিয়া</p>
+                        <p>⏰ অফিস সময়: সকাল ৯টা - বিকাল ৫টা</p>
+                    </div>
+                    <div>
+                        <a href="http://pbs.kushtia.gov.bd" target="_blank" 
+                           class="text-blue-600 hover:underline flex items-center">
+                            <span class="mr-2">🌐</span> ওয়েবসাইট
+                        </a>
+                        <p>✉️ ইমেইল: kushtiapbs@yahoo.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-stations -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">গ্রিড সাব-স্টেশন সমূহ</h3>
+                <div class="space-y-4">
+                    <div class="pl-4">
+                        <h4 class="font-medium">কুষ্টিয়া সদর গ্রিড সাব-স্টেশন</h4>
+                        <p>📞 ফোন: <a href="tel:01769404051" class="text-blue-600 hover:underline">01769-404051</a></p>
+                        <p>📍 ঠিকানা: কুষ্টিয়া সদর</p>
+                    </div>
+                    <div class="pl-4">
+                        <h4 class="font-medium">কুমারখালী গ্রিড সাব-স্টেশন</h4>
+                        <p>📞 ফোন: <a href="tel:01769404052" class="text-blue-600 hover:underline">01769-404052</a></p>
+                        <p>📍 ঠিকানা: কুমারখালী</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Services Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">অনলাইন সেবা সমূহ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold mb-3">বিল পরিশোধ</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://wzpdcl.gov.bd/site/page/6e9f1048-c284-4e98-8671-a6fab0864f60" 
+                               target="_blank" class="text-blue-600 hover:underline flex items-center">
+                                <span class="mr-2">💳</span> অনলাইন বিল পরিশোধ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wzpdcl.gov.bd/site/page/867e8261-b875-4b6e-b81e-a4e87fd1c95e" 
+                               target="_blank" class="text-blue-600 hover:underline flex items-center">
+                                <span class="mr-2">📱</span> মোবাইল অ্যাপ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">অন্যান্য সেবা</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://wzpdcl.gov.bd/site/page/8e43d346-15e5-4e9b-8478-f2f8e5e8f9b0" 
+                               target="_blank" class="text-blue-600 hover:underline flex items-center">
+                                <span class="mr-2">📝</span> নতুন সংযোগের আবেদন
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wzpdcl.gov.bd/site/page/6ffcb562-34d3-4c88-9e88-f0e347a01e7a" 
+                               target="_blank" class="text-blue-600 hover:underline flex items-center">
+                                <span class="mr-2">⚡</span> লোড ক্যালকুলেটর
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Information Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">গুরুত্বপূর্ণ তথ্য</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <h3 class="font-semibold">বিল সংক্রান্ত</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>প্রতি মাসের ১৫ তারিখের মধ্যে বিল পরিশোধ করুন</li>
+                        <li>বিল পরিশোধের রশিদ সংরক্ষণ করুন</li>
+                        <li>মিটার রিডিং নিয়মিত চেক করুন</li>
+                        <li>অতিরিক্ত বিল হলে অভিযোগ করুন</li>
+                    </ul>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-semibold">নিরাপত্তা টিপস</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>বৈদ্যুতিক তার স্পর্শ করবেন না</li>
+                        <li>ট্রিপ সুইচ সচল রাখুন</li>
+                        <li>অবৈধ সংযোগ নিবেন না</li>
+                        <li>বৃষ্টির সময় সতর্ক থাকুন</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        // Logout Handler
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+
+        // Add the marquee banner
+        addMarqueeBanner();
+
+         // Update copyright year dynamically
+         const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital List - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">হাসপাতাল তালিকা</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hospital List -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">হাসপাতালের তালিকা</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">নাম</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ঠিকানা</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">যোগাযোগ</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">সেবা সময়</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">কুষ্টিয়া জেনারেল হাসপাতাল</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps/dir//Hospital+Rd,+Kushtia+7000/@23.9011831,89.0418669,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x39fe9652a4c1fb75:0x3792782a9b7ad6bd!2m2!1d89.1242685!2d23.901205?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">কাজ চলমান রয়েছে</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">২৪ ঘণ্টা</div>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">আদ্-দ্বীন হাসপাতাল (কুষ্টিয়া)</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps/dir//W46H%2BP8R+Ad-Din+Hospital+(Kushtia),+Chand+Mohammad+Rd,+Kushtia/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x39fe97a92f8f649f:0x6b6d429028125060?sa=X&ved=1t:57443&ictx=111">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01713488427</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">২৪ ঘণ্টা</div>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">কুষ্টিয়া শিশু হাসপাতাল</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="ttps://www.google.com/maps/place/V4VG%2BQ77+%E0%A6%B6%E0%A6%BF%E0%A6%B6%E0%A7%81+%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2,+Housing+Rd,+Kushtia/@23.8943837,89.1256991,17z/data=!3m1!4b1!4m6!3m5!1s0x39fe9650fc3e331b:0x57f976a8f25b4e35!8m2!3d23.8943672!4d89.1256902!16s%2Fg%2F11b8tj6kyy?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">কোন নির্ধারিত নাম্বার নেই</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500"> সকাল ১০ টা  থেকে দুপুর ২ টা </div>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">দার-উস শেফা বেসরকারি হাসপাতাল</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps/dir//W439%2BHPR,+Kushtia+-+Jhenaidah+Hwy,+Kushtia+7000/@23.9039773,89.0368622,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x39fe97b336386c73:0xf243c84db26af7a2!2m2!1d89.1192638!2d23.9039993?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01713488427</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">২৪ ঘণ্টা</div>
+                                </td>
+                            </tr>
+                            <!-- Add more hospital entries as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+         // Update copyright year dynamically
+         const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+
+    
+
+</body>
+</html> 

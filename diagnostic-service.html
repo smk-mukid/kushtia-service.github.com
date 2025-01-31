@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডায়াগনস্টিক সেন্টার - Kushtia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-xl font-bold text-white text-center">ডায়াগনস্টিক সেন্টার</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hospital List -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">ডায়াগনস্টিক সেন্টার তালিকা</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">নাম</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ঠিকানা</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">যোগাযোগ</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">সেবা সময়</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">পপুলার ডায়াগনস্টিক সেন্টার লিমিটেড - কুষ্টিয়া</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps/dir//CT+Tower,+Mir+Mosharaf+Hossain+Road,+College+Moor,+Kushtia/@23.9038813,89.0447878,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x39fe97289c91a669:0x15eabddfcdefdd04!2m2!1d89.1271865!2d23.9038966?entry=ttu&g_ep=EgoyMDI1MDEyOC4wIKXMDSoASAFQAw%3D%3D">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">09666787817</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">	7 AM–11 PM</div>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">আমিন ডায়াগনস্টিক অ্যান্ড মেডিকেল সার্ভিসেস</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?sca_esv=cd281e7ce9dc4f31&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEiXtvbrwY-AgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBDm1lZGljYWxfY2VudGVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5sZG1OVVYwUjNFQUWqAasBEAEqPiI64Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsCglMh8QASIbvC1lBtBdhA6oINP973ToOrwLYc66DH-_uJWaMkYQAiJCa3VzaHRpYSDgpqHgpr7gpq_gprzgpr7gppfgpqjgprjgp43gpp_gpr_gppUg4Ka44KeH4Kao4KeN4Kaf4Ka-4Kaw-gEECAAQPg&vet=12ahUKEwiE3a-Mj6CLAxX6SGwGHRMpEXEQ8UF6BAgXEFQ..i&lei=H9ecZ8TRPPqRseMPk9LEiAc&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=Kb_TNcKVl_45MYKMNNyRzo00&daddr=33/23,+2+Ram+Chandra+Ray+Chowdhury+Rd,+Kushtia+7000">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01712243514</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">	7 AM–11 PM</div>
+                                </td>
+                            </tr>
+                            <tr>
+                            </tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">আকোটা ডায়াগনস্টিক সেন্টার</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEjS8b-zzI-AgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBEWRpYWdub3N0aWNfY2VudGVyqgGrARABKj4iOuCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAoJTIfEAEiG7wtZQbQXYQOqCDT_e906Dq8C2HOugx_v7iVmjJGEAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsA&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KVuhhjZTlv45MVDXB32816h_&daddr=W43G%2B7GH,+Ground+Floor,+Ram+Chandra+Ray+Chowdhury+Rd,+Kushtia+7000">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">কোন নির্ধারিত নাম্বার নেই</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500"> 8 AM–10 PM </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">শাপলা ডায়াগনস্টিক সেন্টার, কুষ্টিয়া।</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEiW96-Yr6-AgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBEWRpYWdub3N0aWNfY2VudGVyqgGrARABKj4iOuCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAoJTIfEAEiG7wtZQbQXYQOqCDT_e906Dq8C2HOugx_v7iVmjJGEAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsA&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KT2E97Ssl_45MTN-exXnKtVz&daddr=Kushtia">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01712-228655</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">9 AM–10 PM</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">ডলফিন ডায়াগনস্টিক সেন্টার, কুষ্টিয়া </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEjd3uqb57eAgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBEWRpYWdub3N0aWNfY2VudGVymgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5sTFY5eVJqTjNSUkFCqgGrARABKj4iOuCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAoJTIfEAEiG7wtZQbQXYQOqCDT_e906Dq8C2HOugx_v7iVmjJGEAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsPoBBAgAEB0&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KauhY3XOl_45MTm1iSZ8AmSS&daddr=W42G%2BR8H,+Kushtia">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01568-374523</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">8 AM–11:30 PM</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">দোয়েল ডায়াগনস্টিক সেন্টার</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEj-tPuOyK2AgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBEWRpYWdub3N0aWNfY2VudGVyqgGrARABKj4iOuCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAoJTIfEAEiG7wtZQbQXYQOqCDT_e906Dq8C2HOugx_v7iVmjJGEAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsA&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KVk7GaDGl_45MR6aQrb6csh9&daddr=15/12+M.U.Bhuyan+Road,+Kushtia">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">কোন নির্ধারিত নাম্বার নেই</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">10:00 AM–8:30 PM</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">সোনো হাসপাতাল লিমিটেড</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEja14q_5oCAgAhaShABEAIYACJCa3VzaHRpYSDgpqHgpr7gpq_gprzgpr7gppfgpqjgprjgp43gpp_gpr_gppUg4Ka44KeH4Kao4KeN4Kaf4Ka-4KawkgEIaG9zcGl0YWyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTnhjRFl0ZWxoM0VBRaoBqwEQASo-IjrgpqHgpr7gpq_gprzgpr7gppfgpqjgprjgp43gpp_gpr_gppUg4Ka44KeH4Kao4KeN4Kaf4Ka-4KawKCUyHxABIhu8LWUG0F2EDqgg0_3vdOg6vAthzroMf7-4lZoyRhACIkJrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprD6AQUIxwEQPQ&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KT9roFWrl_45MZb5CRI81GAm&daddr=Sono+Tower,+Mir+Mosharaf+Hossain+Rd,+Kushtia+7000">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01880-095606</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">Open 24 hours</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium text-gray-900">কুষ্টিয়া ট্রমা সেন্টার ও স্পেশালাইজড হাসপাতাল</div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-500"><a href="https://www.google.com/maps?authuser=0&sca_esv=35fa7b1b81cbc016&lqi=CkdrdXNodGlhIOCmoeCmvuCmr-CmvOCmvuCml-CmqOCmuOCnjeCmn-Cmv-CmlSDgprjgp4fgpqjgp43gpp_gpr7gprAgbGlzdEirjZT22beAgAhaThABEAIYABgBGAIiQmt1c2h0aWEg4Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsJIBEWRpYWdub3N0aWNfY2VudGVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJLTmxwSFgwVm5FQUWqAasBEAEqPiI64Kah4Ka-4Kav4Ka84Ka-4KaX4Kao4Ka44KeN4Kaf4Ka_4KaVIOCmuOCnh-CmqOCnjeCmn-CmvuCmsCglMh8QASIbvC1lBtBdhA6oINP973ToOrwLYc66DH-_uJWaMkYQAiJCa3VzaHRpYSDgpqHgpr7gpq_gprzgpr7gppfgpqjgprjgp43gpp_gpr_gppUg4Ka44KeH4Kao4KeN4Kaf4Ka-4Kaw-gEECDcQMA&vet=12ahUKEwj2xaXglKCLAxWeUGwGHXM9LBYQ8UF6BAgXEFQ..i&lei=Dt2cZ_aGCp6hseMP8_qwsQE&cs=0&um=1&ie=UTF-8&fb=1&gl=bd&sa=X&geocode=KRcsbx4Ul_45MUoNGeI1d4Et&daddr=W43G%2B89G,+1+Ram+Chandra+Ray+Chowdhury+Rd,+Kushtia+7000">ম্যাপে দেখুন</a></div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">01321-232511</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-500">Open 24 hours</div>
+                                </td>
+                            </tr>
+                            <!-- Add more hospital entries as needed -->
+                        </tbody>
+                    </table>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 class="text-center text-2xl font-bold text-black">আপডেট চলমান রয়েছে....</h1>
+     </div>
+
+
+     <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Auth check and user management
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        const currentUser = checkAuth();
+        if (currentUser) {
+            document.getElementById('headerUserPhone').textContent = currentUser.phone;
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+
+        // Update copyright year dynamically
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+</body>
+</html> 

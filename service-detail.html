@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Detail - Kushtia Service Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="fevicon.jpg">
+</head>
+<body class="bg-green-500">
+    <!-- Header -->
+    <header class="py-4 relative bg-green-600">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <!-- User Info Section -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-lg">👤</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p id="headerUserPhone" class="text-white text-sm font-medium"></p>
+                </div>
+            </div>
+            <h1 class="text-2xl font-bold text-white text-center" id="serviceTitle">Service Details</h1>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-white hover:text-gray-200">
+                    <span class="text-2xl"><button class="bg-black px-4 py-1 rounded text-white hover:bg-gray-800 transition-colors">←</button></span>
+                </a>
+                <button id="logoutBtn" class="bg-red-500 px-4 py-1 rounded text-white hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Detail Table -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold text-center text-white mb-8">ডাক্তার লিস্ট কুষ্টিয়া</h2>
+            
+            <div class="space-y-4">
+                <!-- Popular Hospital Doctor List -->
+                <a href="https://www.doctorbangladesh.com/popular-kushtia-doctor-list-contact/" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-purple-700">পপুলার ডায়াগনস্টিক সেন্টার কুষ্টিয়া ডাক্তারের তালিকা ও যোগাযোগ</h3>
+                    </div>
+                </a>
+
+                <!-- Amin Hospital Doctor List -->
+                <a href="https://www.doctorbangladesh.com/amin-kushtia-doctor-list-contact/" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-purple-700">আমিন ডায়াগনস্টিক কুষ্টিয়া ডাক্তারের তালিকা ও যোগাযোগ</h3>
+                    </div>
+                </a>
+
+                <!-- Sunno Hospital Doctor List -->
+                <a href="https://www.doctorbangladesh.com/sono-kushtia-doctor-list-contact/" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-purple-700">সনো হাসপাতাল (সনো টাওয়ার 1 ও 2) কুষ্টিয়া ডাক্তারের তালিকা ও যোগাযোগ</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+
+        // Check login state
+        function checkAuth() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (!savedUser) {
+                window.location.href = 'index.html';
+                return false;
+            }
+            return JSON.parse(savedUser);
+        }
+
+        // Initialize page
+        const currentUser = checkAuth();
+        if (!currentUser) {
+            // User will be redirected if not logged in
+            throw new Error('Unauthorized');
+        }
+
+        // Update header user info
+        document.getElementById('headerUserPhone').textContent = currentUser.phone;
+
+        // Get service information from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceId = urlParams.get('id');
+        const serviceName = urlParams.get('name');
+
+        // Update page title with service name
+        if (serviceName) {
+            document.getElementById('serviceTitle').textContent = serviceName;
+        }
+         // Update copyright year dynamically
+         const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+    <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
+        <p>Contact us: mukidhossainsmk@gmail.com</p>
+        <p id="copyright" class="mt-2 text-sm">
+            &copy; <span id="currentYear"></span>       SMK-Learn By kushtia. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html> 
