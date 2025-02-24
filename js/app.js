@@ -102,6 +102,9 @@ function handleServiceClick(service) {
             case 11: //website
             window.location.href = 'website.html';
             break;
+            case 22: //website
+            window.location.href = 'buy-code.html';
+            break;
         default:
             console.log('Service page not implemented yet');
     }
