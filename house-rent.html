@@ -102,7 +102,7 @@
          const currentYear = new Date().getFullYear();
         document.getElementById('currentYear').textContent = currentYear;
 
-        document.addEventListener('DOMContentLoaded', () => {
+     document.addEventListener('DOMContentLoaded', () => {
   loadPosts();
 });
 
@@ -118,18 +118,34 @@ function postAd() {
 
   if (!user) return alert("Please login!");
 
-  const post = {
-    id: Date.now(),
-    title,
-    desc,
-    price,
-    likes: 0,
-    user: user.name
-  };
-
   const posts = JSON.parse(localStorage.getItem("posts")) || [];
-  posts.push(post);
+
+  const editingId = localStorage.getItem("editingPostId");
+  if (editingId) {
+    const index = posts.findIndex(p => p.id == editingId);
+    if (index !== -1) {
+      posts[index].title = title;
+      posts[index].desc = desc;
+      posts[index].price = price;
+    }
+    localStorage.removeItem("editingPostId");
+  } else {
+    const post = {
+      id: Date.now(),
+      title,
+      desc,
+      price,
+      likes: 0,
+      user: user.name,
+      userEmail: user.email,
+    };
+    posts.push(post);
+  }
+
   localStorage.setItem("posts", JSON.stringify(posts));
+  document.getElementById("title").value = "";
+  document.getElementById("desc").value = "";
+  document.getElementById("price").value = "";
   loadPosts();
 }
 
@@ -137,6 +153,8 @@ function loadPosts() {
   const posts = JSON.parse(localStorage.getItem("posts")) || [];
   const postsContainer = document.getElementById("posts");
   postsContainer.innerHTML = "";
+
+  const currentUser = getUser();
 
   posts.reverse().forEach(post => {
     const div = document.createElement("div");
@@ -146,9 +164,26 @@ function loadPosts() {
       <p class="text-gray-600">${post.desc}</p>
       <p class="text-sm text-gray-500">Posted by: ${post.user}</p>
       <p class="font-bold mt-2">Price: $${post.price}</p>
-      <button onclick="likePost(${post.id})" class="mt-2 bg-red-500 text-white px-3 py-1 rounded">
-        ❤️ Like (${post.likes})
-      </button>
+
+      <div class="mt-2 space-x-2">
+        <button onclick="likePost(${post.id})" class="bg-red-500 text-white px-3 py-1 rounded">
+          ❤️ Like (${post.likes})
+        </button>
+        <button onclick="messageOwner('${post.user}', '${post.userEmail}')" class="bg-green-500 text-white px-3 py-1 rounded">
+          💬 Message
+        </button>
+        ${
+          currentUser && currentUser.name === post.user
+            ? `
+          <button onclick="editPost(${post.id})" class="bg-yellow-500 text-white px-3 py-1 rounded">
+            ✏️ Edit
+          </button>
+          <button onclick="deletePost(${post.id})" class="bg-gray-700 text-white px-3 py-1 rounded">
+            🗑️ Delete
+          </button>`
+            : ""
+        }
+      </div>
     `;
     postsContainer.appendChild(div);
   });
@@ -164,13 +199,31 @@ function likePost(id) {
   }
 }
 
-function sendMessage() {
-  const message = document.getElementById("msgToAll").value;
-  if (!message.trim()) return alert("Please write a message.");
-
-  alert(`Message sent to all users: "${message}" (simulated)`);
-  document.getElementById("msgToAll").value = "";
+function messageOwner(name, email) {
+  alert(`💬 Message to ${name} (${email}): [Simulated SMS popup]`);
 }
+
+function deletePost(id) {
+  const confirmDel = confirm("Are you sure you want to delete this post?");
+  if (!confirmDel) return;
+
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const filtered = posts.filter(p => p.id !== id);
+  localStorage.setItem("posts", JSON.stringify(filtered));
+  loadPosts();
+}
+
+function editPost(id) {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const post = posts.find(p => p.id === id);
+  if (!post) return;
+
+  document.getElementById("title").value = post.title;
+  document.getElementById("desc").value = post.desc;
+  document.getElementById("price").value = post.price;
+  localStorage.setItem("editingPostId", id);
+}
+
 
     </script>
     
