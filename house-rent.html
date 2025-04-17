@@ -31,62 +31,43 @@
         </div>
     </header>
 
-                <div class="container mx-auto px-2">
-                    <h1 class="text-1xl font-bold text-black pading-10 text-center max-h-md mx-auto p-2">পেজটি আপডেট চলছে এবং এখানে সমস্ত ইউজারের ডাটা এবং ইউজারের নিরাপত্তার ফিউচারগুলো আপডেট চলছে.....</h1>
-                </div>
+    <!---------  Header Const  --------->
 
-                <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                    <!--
-                      Background backdrop, show/hide based on modal state.
-                  
-                      Entering: "ease-out duration-300"
-                        From: "opacity-0"
-                        To: "opacity-100"
-                      Leaving: "ease-in duration-200"
-                        From: "opacity-100"
-                        To: "opacity-0"
-                    -->
-                    <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
-                  
-                    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                        <!--
-                          Modal panel, show/hide based on modal state.
-                  
-                          Entering: "ease-out duration-300"
-                            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                            To: "opacity-100 translate-y-0 sm:scale-100"
-                          Leaving: "ease-in duration-200"
-                            From: "opacity-100 translate-y-0 sm:scale-100"
-                            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                        -->
-                        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                            <div class="sm:flex sm:items-start">
-                              <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:size-10">
-                                <svg class="size-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                                </svg>
-                              </div>
-                              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                <h3 class="text-base font-semibold text-gray-900" id="modal-title">Attention</h3>
-                                <div class="mt-2">
-                                  <p class="text-sm  text-black text-hilight text-bold"> পেজটি আপডেট চলছে এবং এখানে সমস্ত ইউজারের ডাটা এবং ইউজারের নিরাপত্তার ফিউচারগুলো আপডেট চলছে.....</p>
-                                </div>
-                                  <div class="mt-4">
-                                    <p class="text-sm text-red-500">ফেসবুক প্রোফাইল ফলো করে রাখুন কোন রকম জরুরী প্রয়োজন হলে এসএমএস করুন</p>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                            <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 sm:ml-3 sm:w-auto"><a href="index.html">Back</a></button>
-                            <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto"><a href="https://www.facebook.com/can.you.say.who.am.i">Follow</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+           <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <script src="scripts/main.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">🏠 House Rental Dashboard</h1>
+    
+    <!-- Post Form -->
+    <div class="bg-white p-4 rounded shadow mb-6">
+      <h2 class="text-xl mb-2">Post a Rental House</h2>
+      <input id="title" type="text" placeholder="Title" class="w-full mb-2 p-2 border rounded" />
+      <textarea id="desc" placeholder="Description" class="w-full mb-2 p-2 border rounded"></textarea>
+      <input id="price" type="number" placeholder="Price" class="w-full mb-2 p-2 border rounded" />
+      <button onclick="postAd()" class="bg-blue-500 text-white px-4 py-2 rounded">Post</button>
+    </div>
+
+    <!-- Message All Users -->
+    <div class="bg-white p-4 rounded shadow mb-6">
+      <h2 class="text-lg mb-2">📢 Send Message to All Users</h2>
+      <textarea id="msgToAll" placeholder="Type your message here..." class="w-full mb-2 p-2 border rounded"></textarea>
+      <button onclick="sendMessage()" class="bg-green-500 text-white px-4 py-2 rounded">Send Message</button>
+    </div>
+
+    <!-- Posts Section -->
+    <div id="posts" class="space-y-4"></div>
+  </div>
+</body>
+</html>
+
+    
                   <footer class="bg-green-500 text-white font-bold text-center p-4 mt-8 rounded-lg shadow-md">
                     <p>Contact us: mukidhossainsmk@gmail.com</p>
                     <p id="copyright" class="mt-2 text-sm">
@@ -120,6 +101,77 @@
          // Update copyright year dynamically
          const currentYear = new Date().getFullYear();
         document.getElementById('currentYear').textContent = currentYear;
+
+        document.addEventListener('DOMContentLoaded', () => {
+  loadPosts();
+});
+
+function getUser() {
+  return JSON.parse(localStorage.getItem("currentUser"));
+}
+
+function postAd() {
+  const title = document.getElementById("title").value;
+  const desc = document.getElementById("desc").value;
+  const price = document.getElementById("price").value;
+  const user = getUser();
+
+  if (!user) return alert("Please login!");
+
+  const post = {
+    id: Date.now(),
+    title,
+    desc,
+    price,
+    likes: 0,
+    user: user.name
+  };
+
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  posts.push(post);
+  localStorage.setItem("posts", JSON.stringify(posts));
+  loadPosts();
+}
+
+function loadPosts() {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const postsContainer = document.getElementById("posts");
+  postsContainer.innerHTML = "";
+
+  posts.reverse().forEach(post => {
+    const div = document.createElement("div");
+    div.className = "bg-white p-4 rounded shadow";
+    div.innerHTML = `
+      <h3 class="text-xl font-semibold">${post.title}</h3>
+      <p class="text-gray-600">${post.desc}</p>
+      <p class="text-sm text-gray-500">Posted by: ${post.user}</p>
+      <p class="font-bold mt-2">Price: $${post.price}</p>
+      <button onclick="likePost(${post.id})" class="mt-2 bg-red-500 text-white px-3 py-1 rounded">
+        ❤️ Like (${post.likes})
+      </button>
+    `;
+    postsContainer.appendChild(div);
+  });
+}
+
+function likePost(id) {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const index = posts.findIndex(p => p.id === id);
+  if (index !== -1) {
+    posts[index].likes += 1;
+    localStorage.setItem("posts", JSON.stringify(posts));
+    loadPosts();
+  }
+}
+
+function sendMessage() {
+  const message = document.getElementById("msgToAll").value;
+  if (!message.trim()) return alert("Please write a message.");
+
+  alert(`Message sent to all users: "${message}" (simulated)`);
+  document.getElementById("msgToAll").value = "";
+}
+
     </script>
     
    
